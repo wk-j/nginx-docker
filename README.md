@@ -2,3 +2,9 @@
 
 - NGINX
 - .NET Core
+
+
+```
+cake -target=Start-Docker
+open http://localhost
+```

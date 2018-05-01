@@ -5,10 +5,19 @@ services:
     environment:
       - NGINX_HOST=foobar.com
     volumes:
-      - "${WORKING_DIR}/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "${ROOT}/nginx.conf:/etc/nginx/nginx.conf:ro"
     ports:
         - "80:80"
+    networks:
+      - aspnetcoreapp-network
+
+  app:
+    build: .
+    volumes:
+      - "${ROOT}/logs:/app/logs"
+    networks:
+      - aspnetcoreapp-network
 
 networks:
-  aspnet-network:
-    driver: bride
+  aspnetcoreapp-network:
+    driver: bridge
