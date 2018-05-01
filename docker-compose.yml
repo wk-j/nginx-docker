@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  nginx:
+    image: "nginx"
+    environment:
+      - NGINX_HOST=foobar.com
+    volumes:
+      - "${WORKING_DIR}/nginx.conf:/etc/nginx/nginx.conf:ro"
+    ports:
+        - "80:80"
+
+networks:
+  aspnet-network:
+    driver: bride
