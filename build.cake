@@ -7,7 +7,7 @@ var project = $"src/{name}/{name}.csproj";
 
 Task("Publish").Does(() => {
     DotNetCorePublish(project, new DotNetCorePublishSettings {
-        OutputDirectory = "publish"
+        OutputDirectory = "src/publish"
     });
 });
 
@@ -15,6 +15,7 @@ Task("Start-Docker")
     .IsDependentOn("Publish")
     .Does(() => {
 
+        CleanDirectory("working");
         PS.StartProcess("docker-compose down");
         PS.StartProcess("docker-compose build");
         PS.StartProcess("docker-compose up");
