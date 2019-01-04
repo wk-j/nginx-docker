@@ -8,6 +8,7 @@ services:
       - "${ROOT}/nginx/logs:/var/log/nginx"
     ports:
         - "80:80"
+        - "9999:9999"
     networks:
       - aspnetcoreapp-network
 
@@ -19,8 +20,8 @@ services:
       - "${ROOT}/app/logs:/app/logs"
     networks:
       - aspnetcoreapp-network
-    ports:
-      - "5000:5000"
+    # ports:
+      # - "5000:5000"
 
 networks:
   aspnetcoreapp-network:
