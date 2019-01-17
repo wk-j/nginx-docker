@@ -7,6 +7,8 @@
 ```bash
 cake -target=Start-Docker
 open http://localhost/api/values
+
+sh start-docker.sh
 ```
 
 ## Resources
