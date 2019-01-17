@@ -3,12 +3,10 @@
 - NGINX
 - .NET Core
 
-
 ```bash
-cake -target=Start-Docker
-open http://localhost/api/values
-
 sh start-docker.sh
+open http://localhost/api/values
+open http://localhost:88
 ```
 
 ## Resources
